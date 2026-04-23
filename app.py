@@ -2,6 +2,13 @@ import os
 
 import streamlit as st
 
+try:
+    for _key, _val in st.secrets.items():
+        if isinstance(_val, (str, int, float, bool)) and _key not in os.environ:
+            os.environ[_key] = str(_val)
+except (FileNotFoundError, Exception):
+    pass
+
 from auth import authenticate_user, clear_auth_session, get_authenticated_user, init_auth_db, register_user
 from billing import (
     create_checkout_session_url_for_user,
