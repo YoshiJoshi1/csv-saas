@@ -1,0 +1,13 @@
+streamlit
+pandas
+matplotlib
+stripe
+fastapi
+uvicorn
+bcrypt
+pytest
+SQLAlchemy
+psycopg[binary]
+supabase
+sentry-sdk
+alembic
